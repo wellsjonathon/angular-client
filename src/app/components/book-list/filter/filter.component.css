@@ -1,0 +1,41 @@
+.Filters__filterBtn,
+.Filters__filterBtn--active {
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Filters__filterBtn {
+  background: #EEEEEE;
+  color: #777777;
+  transition-duration: 0.15s;
+}
+
+.Filters__filterBtn--active {
+  background: #64C8F0;
+  color: #EEEEEE;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  transition-duration: 0.15s;
+  z-index: 100;
+}
+
+.Filters__filterBtn:hover {
+  background: #DDDDDD;
+  color: #666666;
+  transition-duration: 0.15s;
+}
+
+.Filters__filterBtn:active {
+  background: #CCCCCC;
+  color: #555555;
+}
+
+.Filters__filterBtn--active:hover {
+  background: #4FB0D6;
+  color: #DDDDDD;
+  transition-duration: 0.15s;
+}

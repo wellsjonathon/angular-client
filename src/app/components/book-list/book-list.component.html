@@ -1,0 +1,44 @@
+<div class='BookList'>
+    <div class='Filters'>
+        <filter filterText='All'></filter>
+        <filter filterText='Available'></filter>
+        <filter filterText='Unavailable'></filter>
+    </div>
+    <!-- {
+        (this.props.isFetching)
+        ?   (<div class='BookList__loaderContainer'>
+                <FaSpinner class='BookList__loader'/>
+            </div>) -->
+        <table class='BookList__table'>
+            <thead>
+                <tr>
+                    <th class='BookRow__title'>Title</th>
+                    <th class='BookRow__author'>Author</th>
+                    <th class='BookRow__genre'>Genre</th>
+                    <th class='BookRow__year'>Year</th>
+                    <th class='BookRow__available'>Available</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let book of books' class='BookRow'>
+                    <td class='BookRow__title'>{{book.title}}</td>
+                    <td class='BookRow__author'>{{book.author}}</td>
+                    <td class='BookRow__genre'>{{book.genre}}</td>
+                    <td class='BookRow__year'>{{book.published}}</td>
+                    <td class='BookRow__available'>
+                        <button *ngIf='book.available; else unavailable' class='BookRow__statusBtn--available'>
+                            <span>Check-out</span>
+                        </button>
+                        <ng-template #unavailable>
+                            <button class='BookRow__statusBtn--unavailable'>
+                                <span>Return</span>
+                            </button>    
+                        </ng-template>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <button class='BookList__refreshBtn' onClick={this.props.onRefresh}>
+        Refresh
+    </button>
+</div>
